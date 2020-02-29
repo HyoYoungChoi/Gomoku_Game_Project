@@ -17,14 +17,23 @@ namespace Client
             InitializeComponent();
         }
 
-        private void singlePlayButton_Click(object sender, EventArgs e)
+        private void singlePlayButton_Click(object sender, EventArgs e) // 싱글플레이 버튼 클릭시
         {
-
+            Hide(); // 현재 창 숨기기
+            SinglePlayForm singlePlayForm = new SinglePlayForm();   // 싱글플레이창 생성
+            singlePlayForm.FormClosed += new FormClosedEventHandler(childForm_Closed);  // 싱글플레이창 소멸시 함수설정.
+            singlePlayForm.Show();  // 싱글플레이창 보이기.
         }
 
-        private void exitButton_Click(object sender, EventArgs e)
+        private void exitButton_Click(object sender, EventArgs e)   // 닫기버튼 클릭시
         {
+            // 프로그램 종료.
+            System.Windows.Forms.Application.Exit();
+        }
 
+        void childForm_Closed(object sender, FormClosedEventArgs e) // 싱글플레이창 소멸
+        {
+            Show(); // 현재 창 보이기
         }
     }
 }
