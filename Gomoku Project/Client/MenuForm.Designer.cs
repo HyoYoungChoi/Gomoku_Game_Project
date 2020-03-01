@@ -61,7 +61,7 @@
             this.multiPlayButton.TabIndex = 0;
             this.multiPlayButton.Text = "함께하기";
             this.multiPlayButton.UseVisualStyleBackColor = true;
-            this.multiPlayButton.Click += new System.EventHandler(this.singlePlayButton_Click);
+            this.multiPlayButton.Click += new System.EventHandler(this.multiPlayButton_Click);
             // 
             // MenuForm
             // 

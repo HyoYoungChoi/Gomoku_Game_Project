@@ -35,5 +35,13 @@ namespace Client
         {
             Show(); // 현재 창 보이기
         }
+
+        private void multiPlayButton_Click(object sender, EventArgs e)
+        {
+            Hide(); // 현재 창 숨기기
+            MultiPlayForm multiPlayForm = new MultiPlayForm();   // 멀티플레이창 생성
+            multiPlayForm.FormClosed += new FormClosedEventHandler(childForm_Closed);  // 멀티플레이창 소멸시 함수설정.
+            multiPlayForm.Show();  // 멀티플레이창 보이기.
+        }
     }
 }
