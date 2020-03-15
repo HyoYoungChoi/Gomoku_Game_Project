@@ -269,13 +269,15 @@ namespace Client
         }
 
         private void MultiPlayForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
+        { 
             closeNetwork();
         }
 
         void closeNetwork()
         {
             if (threading && thread.IsAlive) thread.Abort();
+
+
             if (entered)
             {
                 tcpClient.Close();
